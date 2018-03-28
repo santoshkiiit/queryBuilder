@@ -55,6 +55,11 @@ public class QueryBuilder {
 
     private boolean validateAndBuildExpressionTree(String query) {
 
+        if(query==null || query.isEmpty()){
+            logger.warning("query is empty");
+            resultMessage ="query is empty";
+            return false;
+        }
 
         String token="";
         for(int i=0;i < query.length();i++){
